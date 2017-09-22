@@ -213,24 +213,6 @@
                   </a>
                 </li>
               </shiro:hasPermission>
-               <shiro:hasPermission permission="menu:hmis">
-                <li><a href="#"><g:message code="hmis.label"/></a>
-                  <div class="sub-submenu">
-                    <ul class="submenu">
-                      <li>
-                        <a href="${createLink(controller: 'hmisEquipmentType', action:'list')}">
-                          <g:message code="hmis.equipment.type.label"/>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="${createLink(controller: 'hmisReport', action:'list')}">
-                          <g:message code="hmis.report.label"/>
-                        </a>                      
-                      </li>
-                    </ul>
-                    </div>
-                </li>
-              </shiro:hasPermission>
               <shiro:hasPermission permission="menu:sparePartType">
                 <li>
                   <a href="${createLink(controller: 'sparePartType', action:'list')}">
@@ -293,8 +275,8 @@
   </div>
 
   <div id="footer">
-    <div class="wrapper">
-      &copy;<g:message code="footer.labels.chai"/>
+    <div class="wrapper"> <!-- 
+      &copy;<g:message code="footer.labels.moh"/> -->
       <br>
       <a href="#"><g:message code="footer.labels.about"/></a>
       |

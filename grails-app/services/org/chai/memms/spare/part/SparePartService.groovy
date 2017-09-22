@@ -342,7 +342,7 @@ class SparePartService {
 					sparePart.type.code,
 					sparePart.type?.getNames(new Locale("en")),
 					sparePart.type?.getNames(new Locale("fr")),
-					sparePart.sparePartPurchasedBy.name(),
+					sparePart.sparePartPurchasedBy?.name(),
 					sparePart.dataLocation?.code,
 					sparePart.dataLocation?.getNames(new Locale("en")),
 					sparePart.dataLocation?.getNames(new Locale("fr")),

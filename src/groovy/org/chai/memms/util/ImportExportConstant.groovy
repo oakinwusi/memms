@@ -30,6 +30,7 @@ package org.chai.memms.util
 
 class ImportExportConstant {
 	public final static String CSV_FILE_EXTENSION = ".csv";
+	public final static String EXCEL_FILE_EXTENSION = ".xls";
 	public final static String TRUE = "TRUE";
 	public final static String FALSE = "FALSE";
 	

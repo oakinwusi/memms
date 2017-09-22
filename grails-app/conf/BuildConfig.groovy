@@ -31,11 +31,21 @@ grails.servlet.version = "2.5" // Change depending on target container complianc
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
-grails.project.target.level = 1.6
-grails.project.source.level = 1.6
+grails.project.target.level = 1.7
+grails.project.source.level = 1.7
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
-grails.tomcat.jvmArgs= ["-Xms256m",  "-Xmx1024m", "-XX:PermSize=512m", "-XX:MaxPermSize=512m"]
+//grails.tomcat.jvmArgs= ["-Xms256m",  "-Xmx1024m", "-XX:PermSize=512m", "-XX:MaxPermSize=512m"]
+//
+//forkConfig = [maxMemory: 1024, minMemory: 64, debug: false, maxPerm: 256]
+//grails.project.fork = [
+// test: forkConfig, // configure settings for the test-app JVM
+// run: forkConfig, // configure settings for the run-app JVM
+// war: forkConfig, // configure settings for the run-war JVM
+// console: forkConfig // configure settings for the Swing console JVM
+//]
+//
+//grails.project.dependency.resolver = "ivy"//"maven" // or ivy
 
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -43,7 +53,7 @@ grails.project.dependency.resolution = {
         // uncomment to disable ehcache
         excludes 'ehcache'
     }
-    log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
 
     repositories {
@@ -55,11 +65,13 @@ grails.project.dependency.resolution = {
         // uncomment these to enable remote dependency resolution from public Maven repositories
         mavenCentral()
         mavenLocal()
-		mavenRepo "http://m2repo.spockframework.org/snapshots"
+	    mavenRepo "http://m2repo.spockframework.org/snapshots"
         mavenRepo "http://snapshots.repository.codehaus.org"
         mavenRepo "http://repository.codehaus.org"
         mavenRepo "http://download.java.net/maven/2/"
         mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo "http://repo.grails.org/grails/core"
+	    mavenRepo "http://repo.grails.org/grails/plugins"
 		
 		/**
 		* Configure our resolver.
@@ -88,9 +100,8 @@ grails.project.dependency.resolution = {
 		compile ":mail:1.0"
         compile ":jquery:1.7.1"
         compile ":resources:1.2-RC1"	
-		compile ":cached-resources:1.0"
+		//compile ":cached-resources:1.0"
 		compile ":cache-headers:1.1.5"
-		compile ":shiro:1.1.5"
 		compile ":springcache:1.3.1"
 		compile ":compass-sass:0.7"
 		compile ":i18n-fields:0.6.1-CHAI"
@@ -98,7 +109,8 @@ grails.project.dependency.resolution = {
 		compile ":rabbitmq-tasks:0.5.3-SNAPSHOT"
 		compile ":chai-locations:0.5.1-CHAI"
 		compile ":build-info-tag:0.3.1"
-		compile ":quartz:1.0-RC2"
+		//compile ":quartz:1.0-RC2"
+		//compile ":shiro:1.1.5"
 		compile ":google-visualization:0.6.2"
 		compile ":rest-client-builder:1.0.2"
 		compile ":release:2.0.3" 
@@ -107,6 +119,32 @@ grails.project.dependency.resolution = {
 		test (":spock:0.6") {changing = false}
 		//		test ":geb:0.7.1"
 		compile ":csv:0.3.1"
+		
+		//Testing if compatible with grails 2.1.0
+		
+		compile (":shiro:1.2.1"){
+			excludes "quartz"
+		}
+		compile ":quartz:1.0.1"
+//		//ADDED TO ADAPT 2.3
+//		compile ":hibernate:3.6.10.2"
+//		
+//		
+//		// plugins for the build system only
+//		build ":tomcat:7.0.42"
+//
+//		// plugins for the compile step
+//		compile ":scaffolding:2.0.0"
+//		compile ':cache:1.1.1'
+//
+//		// plugins needed at runtime but not for compilation
+//		runtime ":database-migration:1.3.5"
+//		runtime ":jquery:1.10.2"
+//		runtime ":resources:1.2"
+//		// Uncomment these (or add new ones) to enable additional resources capabilities
+//		//runtime ":zipped-resources:1.0.1"
+		runtime ":cached-resources:1.1"
+//		//runtime ":yui-minify-resources:0.1.5"
     }
 	
 }
