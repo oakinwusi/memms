@@ -46,32 +46,6 @@ class HmisReportServiceSpec extends IntegrationTests {
 	
 	def hmisReportService
 
-//	def "test if report hmis report label are well generated"() {
-//		setup:
-//
-//		def april = new DateTime(createDate(1,4,2014))
-//		def july = new DateTime(createDate(1,7,2013))
-//		def october = new DateTime(createDate(1,10,2015))
-//		def january = new DateTime(createDate(1,1,2016))
-//		def today = new DateTime(new Date())
-//
-//		when:
-//
-//		def mapQrtOne = hmisReportService.generateHmisReportName(april)
-//		def mapQrtTwo = hmisReportService.generateHmisReportName(july)
-//		def mapQrtThree = hmisReportService.generateHmisReportName(october)
-//		def mapQrtFour = hmisReportService.generateHmisReportName(january)
-//		def map = hmisReportService.generateHmisReportName(today)
-//
-//		then:
-//
-//		mapQrtOne.get("periodCode").equals("Q1-"+april.getYear().toString())
-//		mapQrtTwo.get("periodCode").equals( "Q2-"+july.getYear().toString())
-//		mapQrtThree.get("periodCode").equals("Q3-"+october.getYear().toString())
-//		mapQrtFour.get("periodCode").equals("Q4-"+january.getYear().toString())
-//		map.get("periodCode").equals(today.toString())
-//	}
-
 	def "test if report hmis report generateHmisReport(def date)"() {
 		setup:
 		//Set up location structure

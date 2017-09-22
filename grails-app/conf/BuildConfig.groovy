@@ -35,17 +35,6 @@ grails.project.target.level = 1.7
 grails.project.source.level = 1.7
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
-//grails.tomcat.jvmArgs= ["-Xms256m",  "-Xmx1024m", "-XX:PermSize=512m", "-XX:MaxPermSize=512m"]
-//
-//forkConfig = [maxMemory: 1024, minMemory: 64, debug: false, maxPerm: 256]
-//grails.project.fork = [
-// test: forkConfig, // configure settings for the test-app JVM
-// run: forkConfig, // configure settings for the run-app JVM
-// war: forkConfig, // configure settings for the run-war JVM
-// console: forkConfig // configure settings for the Swing console JVM
-//]
-//
-//grails.project.dependency.resolver = "ivy"//"maven" // or ivy
 
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -120,31 +109,11 @@ grails.project.dependency.resolution = {
 		//		test ":geb:0.7.1"
 		compile ":csv:0.3.1"
 		
-		//Testing if compatible with grails 2.1.0
-		
 		compile (":shiro:1.2.1"){
 			excludes "quartz"
 		}
 		compile ":quartz:1.0.1"
-//		//ADDED TO ADAPT 2.3
-//		compile ":hibernate:3.6.10.2"
-//		
-//		
-//		// plugins for the build system only
-//		build ":tomcat:7.0.42"
-//
-//		// plugins for the compile step
-//		compile ":scaffolding:2.0.0"
-//		compile ':cache:1.1.1'
-//
-//		// plugins needed at runtime but not for compilation
-//		runtime ":database-migration:1.3.5"
-//		runtime ":jquery:1.10.2"
-//		runtime ":resources:1.2"
-//		// Uncomment these (or add new ones) to enable additional resources capabilities
-//		//runtime ":zipped-resources:1.0.1"
 		runtime ":cached-resources:1.1"
-//		//runtime ":yui-minify-resources:0.1.5"
     }
 	
 }
