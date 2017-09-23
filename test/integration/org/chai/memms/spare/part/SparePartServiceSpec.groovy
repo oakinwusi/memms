@@ -295,11 +295,11 @@ class SparePartServiceSpec extends IntegrationTests{
 		def sparePartOne = Initializer.newSparePart(SparePartPurchasedBy.BYFACILITY,['en':'Spare Part Descriptions two'],Initializer.getDate(22,07,2010),"","",DataLocation.findByCode(KIVUYE),sparePartType,
 			supplier,user,StockLocation.FACILITY,SparePartStatus.INSTOCK,12,12,0)
 		def sparePartTwo = Initializer.newSparePart(SparePartPurchasedBy.BYFACILITY,['en':'Spare Part Descriptions two'],Initializer.getDate(22,07,2010),"2900.23","EUR",DataLocation.findByCode(KIVUYE),sparePartType,
-			supplier,user,StockLocation.FACILITY,SparePartStatus.INSTOCK,null,4,0)
+			supplier,user,StockLocation.FACILITY,SparePartStatus.INSTOCK,4,4,0)
 		def sparePartThree = Initializer.newSparePart(SparePartPurchasedBy.BYFACILITY,['en':'Spare Part Descriptions two'],Initializer.getDate(22,07,2010),"2900.23","EUR",DataLocation.findByCode(KIVUYE),sparePartType,
 			supplier,user,StockLocation.FACILITY,SparePartStatus.INSTOCK,45,45,0)
 		def sparePartFour = Initializer.newSparePart(SparePartPurchasedBy.BYFACILITY,['en':'Spare Part Descriptions two'],Initializer.getDate(22,07,2010),"2900.23","EUR",DataLocation.findByCode(BUTARO),sparePartType,
-			supplier,user,StockLocation.FACILITY,SparePartStatus.INSTOCK,null,23,10)
+			supplier,user,StockLocation.FACILITY,SparePartStatus.INSTOCK,25,23,10)
 		List<SparePart> spareParts = [sparePartOne,sparePartTwo,sparePartThree]
 
 		when:

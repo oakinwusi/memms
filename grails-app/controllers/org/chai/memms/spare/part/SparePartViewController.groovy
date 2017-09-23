@@ -108,7 +108,8 @@ class SparePartViewController extends AbstractController{
 			render(view:"/entity/list", model: model(spareParts,type) << [
 				template:"sparePart/sparePartList",
 				filterTemplate:"sparePart/sparePartFilter",
-				listTop:"sparePart/listTop"
+				listTop:"sparePart/listTop",
+				code: getLabel()
 			])
 		}
 	}
@@ -143,7 +144,12 @@ class SparePartViewController extends AbstractController{
 	def export = { FilterCommand cmd ->
 		if (log.isDebugEnabled()) log.debug("spareParts.export, command "+cmd)
 		adaptParamsForList()
-		def spareParts = sparePartService.filterSparePart(user,cmd.supplier,cmd.sparePartType,cmd.stockLocation,cmd.sparePartPurchasedBy,cmd.status,params)
+		def spareParts = []
+		if(cmd!=null){
+				spareParts = sparePartService.filterSparePart(user,cmd.supplier,cmd.sparePartType,cmd.stockLocation,cmd.sparePartPurchasedBy,cmd.status,params)
+			}else{
+				spareParts = sparePartService.userScopeSparePartExport(user, params)
+			}
 		File file = sparePartService.exporter(user.location,spareParts)
 
 		response.setHeader "Content-disposition", "attachment; filename=${file.name}.csv"

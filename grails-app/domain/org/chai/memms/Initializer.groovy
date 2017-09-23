@@ -878,7 +878,7 @@ public class Initializer {
 				User.findByUsername("admin"),
 				StockLocation.MMC,
 				SparePartStatus.INSTOCK,
-				null,89,80
+				89,89,80
 				)
 
 			def sparePartTwo = newSparePart(

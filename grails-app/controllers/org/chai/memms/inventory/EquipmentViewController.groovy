@@ -127,7 +127,8 @@ class EquipmentViewController extends AbstractController {
 				render(view:"/entity/list", model: model(equipments, dataLocation) << [
 					template:"equipment/equipmentList",
 					filterTemplate:"equipment/equipmentFilter",
-					listTop:"equipment/listTop"
+					listTop:"equipment/listTop",
+					code: getLabel()
 				])
 			else
 				this.ajaxModel(equipments,dataLocation,params['q'])
@@ -147,7 +148,8 @@ class EquipmentViewController extends AbstractController {
 				render(view:"/entity/list", model: model(equipments, cmd.dataLocation) << [
 					template:"equipment/equipmentList",
 					filterTemplate:"equipment/equipmentFilter",
-					listTop:"equipment/listTop"
+					listTop:"equipment/listTop",
+					code: getLabel()
 				])
 			}
 		}

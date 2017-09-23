@@ -66,6 +66,7 @@ class ImportExportConstant {
 	public final static String DEVICE_OBSERVATION = "observations"
 	
 	//Importing/exporting equipment
+	public final static String EQUIPMENT_CODE = "Equipment code"
 	public final static String EQUIPMENT_SERIAL_NUMBER = "Serial number"
 	public final static String EQUIPMENT_TYPE = "Type"
 	public final static String EQUIPMENT_MODEL = "Model"

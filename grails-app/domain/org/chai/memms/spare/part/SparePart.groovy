@@ -140,7 +140,7 @@ public class SparePart {
 		room nullable: true, blank: true
 		shelf nullable: true, blank: true
 
-		orderedQuantity nullable:true, validator:{ val, obj ->
+		orderedQuantity nullable:false, validator:{ val, obj ->
 			if(val!=null){
 				if(obj.receivedQuantity!=null) return (val >= obj.receivedQuantity) 
 				else return (val > 0 )
@@ -172,6 +172,9 @@ public class SparePart {
 		sparePartPurchasedBy nullable: false, inList:[SparePartPurchasedBy.BYFACILITY,SparePartPurchasedBy.BYMOH, SparePartPurchasedBy.BYMMC, SparePartPurchasedBy.BYPARTNER]
 
 		status nullable: false, inList:[SparePartStatus.INSTOCK,SparePartStatus.PENDINGORDER]
+		//		validator: {val obj ->
+		//			if(obj.status.equals(SparePartStatus.PENDINGORDER)) return val!=null
+		//		}
 
 		stockLocation  nullable: false,inList:[StockLocation.MMC, StockLocation.FACILITY]
 		
