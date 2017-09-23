@@ -280,28 +280,21 @@ class EquipmentService {
 				csvHeaders = this.getExportDataHeaders()
 				writer.writeHeader(csvHeaders);
 			}
-//			for(Equipment equipment: equipments){
-//				List<String> line = [
-//					equipment?.serialNumber,equipment?.type?.code,equipment?.type?.getNames(new Locale("en")),
-//					equipment?.type?.getNames(new Locale("fr")),equipment?.model,equipment?.currentStatus,
-//					equipment?.dataLocation?.code,equipment?.dataLocation?.getNames(new Locale("en")),equipment?.dataLocation?.getNames(new Locale("fr")),
-//					equipment?.department?.code,equipment?.department?.getNames(new Locale("en")),equipment?.department?.getNames(new Locale("fr")),
-//					equipment?.room,equipment?.manufacturer?.code,equipment?.manufacturer?.contact?.contactName,
-//					equipment?.manufactureDate?:"",equipment?.supplier?.code,equipment?.supplier?.contact?.contactName,equipment?.purchaseDate?:"",
-//					equipment?.serviceProvider?.code?:"",equipment?.serviceProvider?.contact?.contactName?:"",equipment?.serviceContractStartDate?:"",
-//					equipment?.serviceContractPeriod?.numberOfMonths?:"",equipment?.purchaseCost?:"n/a",equipment?.currency?:"n/a",
-//					equipment?.purchaser?.name(),equipment?.obsolete,equipment?.warranty?.startDate?:"",equipment?.warrantyPeriod?.numberOfMonths?:""
-//					]
-//				writer.write(line)
-//			}
 			for(Equipment equipment: equipments){
 				List<String> line = [
 					equipment?.serialNumber,equipment?.type?.code,equipment?.type?.getNames(new Locale("en")),
 					equipment?.type?.getNames(new Locale("fr")),equipment?.model,equipment?.currentStatus,
-					equipment?.dataLocation?.code,equipment?.dataLocation?.getNames(new Locale("en")),equipment?.dataLocation?.getNames(new Locale("fr"))
+					equipment?.dataLocation?.code,equipment?.dataLocation?.getNames(new Locale("en")),equipment?.dataLocation?.getNames(new Locale("fr")),
+					equipment?.department?.code,equipment?.department?.getNames(new Locale("en")),equipment?.department?.getNames(new Locale("fr")),
+					equipment?.room,equipment?.manufacturer?.code,equipment?.manufacturer?.contact?.contactName,
+					equipment?.manufactureDate?:"",equipment?.supplier?.code,equipment?.supplier?.contact?.contactName,equipment?.purchaseDate?:"",
+					equipment?.serviceProvider?.code?:"",equipment?.serviceProvider?.contact?.contactName?:"",equipment?.serviceContractStartDate?:"",
+					equipment?.serviceContractPeriod?.numberOfMonths?:"",equipment?.purchaseCost?:"n/a",equipment?.currency?:"n/a",
+					equipment?.purchaser?.name(),equipment?.obsolete,equipment?.warranty?.startDate?:"",equipment?.warrantyPeriod?.numberOfMonths?:""
 					]
 				writer.write(line)
 			}
+			
 		} catch (IOException ioe){
 			// TODO throw something that make sense
 			throw ioe;
