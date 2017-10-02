@@ -144,7 +144,8 @@ public class SparePart {
 			if(val!=null){
 				if(obj.receivedQuantity!=null) return (val >= obj.receivedQuantity) 
 				else return (val > 0 )
-			}
+			}else
+				return val = obj.receivedQuantity
 		}
 		receivedQuantity nullable: true, validator:{ val, obj ->
 			if(val!=null){ 

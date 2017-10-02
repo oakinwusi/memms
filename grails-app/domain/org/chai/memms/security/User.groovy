@@ -141,7 +141,7 @@ class User {
 		userType nullable: false, blank: false, inList:[UserType.ADMIN,UserType.SYSTEM,UserType.TECHNICIANDH,UserType.ASSISTANTTECHHOSP,UserType.TECHNICIANMMC,UserType.TITULAIREHC,UserType.HOSPITALDEPARTMENT,UserType.OTHER]
 		//TODO fix this
 		active validator: { val, obj ->
-			//return val ? obj.location != null && (obj.permissionString || obj.roles.size() > 0) : true
+			return val ? obj.location != null && (obj.permissionString || obj.roles.size() > 0) : true
 		} 
 		lastUpdated nullable: true, validator:{
 			if(it != null) return (it <= new Date())

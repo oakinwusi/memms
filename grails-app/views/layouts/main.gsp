@@ -275,8 +275,8 @@
   </div>
 
   <div id="footer">
-    <div class="wrapper"> <!-- 
-      &copy;<g:message code="footer.labels.moh"/> -->
+    <div class="wrapper"> 
+      &copy;<g:message code="footer.labels.moh"/>
       <br>
       <a href="#"><g:message code="footer.labels.about"/></a>
       |

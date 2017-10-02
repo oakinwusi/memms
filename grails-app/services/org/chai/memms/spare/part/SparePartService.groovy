@@ -322,6 +322,7 @@ class SparePartService {
 				eq ("stockLocation",stockLocation)
 		}
 	}
+	//TO DO APHRO TO CONTINUE WORKING ON THIS METHODE TO MAKE SURE USER IS ACCESSING ONLY HIS SPARE PART
 	public def userScopeSparePartExport(User user, Map<String,String> params){
 		def dataLocations = []
 		def criteria = SparePart.createCriteria();

@@ -91,8 +91,8 @@ class SparePartViewController extends AbstractController{
 				template:"sparePart/sparePartList",
 				listTop:"sparePart/listTop",
 				filterTemplate:"sparePart/sparePartFilter",
-				entities: spareParts,
-				code: getLabel()
+				entities: spareParts
+				//code: getLabel()
 			])
 		}
 	}
