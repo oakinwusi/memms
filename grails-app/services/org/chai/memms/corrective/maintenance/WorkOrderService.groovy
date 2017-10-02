@@ -111,6 +111,7 @@ class WorkOrderService {
 		else{
 			dataLocations = []
 			dataLocations.add(user.location as DataLocation)
+			if(user.location!=null)
 			dataLocations.addAll((user.location as DataLocation)?.manages)
 		}
 		return criteria.list(max:20,sort:"lastUpdated",order:"desc"){
