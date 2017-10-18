@@ -108,7 +108,7 @@ class IndicatorCategorySpec extends  IntegrationTests{
           indicatorCategoryFour.errors.hasFieldErrors("yellowToGreenThreshold")
    }
 
-   def "can't create and save indicator category without redToYellowThreshold"() {
+   def "can't create and save indicator category without redToYellowThresholdTODO_Rename"() {
           when:
           def indicatorCategoryOne = DashboardInitializer.newIndicatorCategory(CODE(128),["en":"Corrective maintenance","fr":"Corrective maintenance fr"],60,80)
           def indicatorCategoryTwo = new IndicatorCategory(code:CODE(129),yellowToGreenThreshold:80,redToYellowThreshold:101)
