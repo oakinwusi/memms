@@ -167,6 +167,22 @@ function getDatePicker(iconPath){
 			buttonImage: iconPath,
 			buttonImageOnly: true
 		});
+		$('.date-range-picker').datepicker({
+			changeYear: true,
+			dateFormat: "dd/mm/yy",
+			showOn: "both",
+			buttonImage: iconPath,
+			buttonImageOnly: true,
+			onSelect: function (arg) {
+                var name = $(this).attr("name")
+                if (name == "from") {
+                	$("input[name='to']").datepicker('option', 'minDate', arg)
+                }
+                else {
+                	$("input[name='from']").datepicker('option', 'maxDate', arg)
+                }
+            }
+		});
 		$('.date-time-picker').datetimepicker({
 			changeYear: true,
 			dateFormat: "dd/mm/yy",
