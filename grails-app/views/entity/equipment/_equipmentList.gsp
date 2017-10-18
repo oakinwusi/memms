@@ -72,6 +72,8 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		updateEquipment("${createLink(controller:'equipmentView',action: 'updateObsolete')}");
+		getDatePicker("${resource(dir:'images',file:'icon_calendar.png')}")
+		showClutips()
 	});
 </script>
 

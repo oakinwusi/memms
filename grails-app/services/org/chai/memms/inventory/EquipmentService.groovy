@@ -265,7 +265,8 @@ class EquipmentService {
 	
 	public File exporter(DataLocation dataLocation,List<Equipment> equipments){
 		if (log.isDebugEnabled()) log.debug("equipmentService.exporter, dataLocation code: "+dataLocation.code + ", ImportExportConstant: "+ImportExportConstant.CSV_FILE_EXTENSION)
-		File csvFile = File.createTempFile(dataLocation.code+"_export",ImportExportConstant.CSV_FILE_EXTENSION);
+		
+		File csvFile = File.createTempFile(dataLocation.code+"_"+dataLocation.getNames(new Locale("en")).replaceAll(" ", "_")+"_equipment_export",ImportExportConstant.CSV_FILE_EXTENSION);
 		FileWriter csvFileWriter = new FileWriter(csvFile);
 		ICsvListWriter writer = new CsvListWriter(csvFileWriter, CsvPreference.EXCEL_PREFERENCE);
 		this.writeFile(writer,equipments);

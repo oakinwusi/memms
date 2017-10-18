@@ -91,8 +91,7 @@ class SparePartViewController extends AbstractController{
 				template:"sparePart/sparePartList",
 				listTop:"sparePart/listTop",
 				filterTemplate:"sparePart/sparePartFilter",
-				entities: spareParts
-				//code: getLabel()
+				entities: spareParts,
 			])
 		}
 	}
@@ -109,7 +108,6 @@ class SparePartViewController extends AbstractController{
 				template:"sparePart/sparePartList",
 				filterTemplate:"sparePart/sparePartFilter",
 				listTop:"sparePart/listTop",
-				code: getLabel()
 			])
 		}
 	}
@@ -124,9 +122,9 @@ class SparePartViewController extends AbstractController{
 		return [
 			entities: entities,
 			entityCount: entities.totalCount,
-			entityClass:getEntityClass(),
-			code: getLabel(),
-			type:type
+			//entityClass:getEntityClass(),
+			type:type,
+			code: getLabel()
 			
 		]
 	}

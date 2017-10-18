@@ -55,12 +55,6 @@
 				<td>
 					<g:stripHtml field="${order.description}" chars="30"/>
 				</td>
-					<td>
-						<g:if test="${order.currentStatus==OrderStatus.OPENATFOSA}">
-			  				<button class="escalate next medium gray" id="${order.id}"><g:message code="work.order.escalate.issue.link.label"/></button>
-			  				<img src="${resource(dir:'images',file:'spinner.gif')}" class="ajax-spinner"/>
-			  			</g:if>
-					</td>
 				<td>
 					<a href="${createLinkWithTargetURI(controller:'notificationWorkOrder', action:'list', params:[id: order.id, read:false])}">${order.getUnReadNotificationsForUser(User.findByUuid(SecurityUtils.subject.principal, [cache: true])).size()}</a>
 				</td>

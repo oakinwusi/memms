@@ -51,8 +51,8 @@ class ImportExportConstant {
 	public final static String LOCATION_NAME_FR = "Facility name_fr"
 	
 	public final static String DEPARTMENT_CODE = "Department"
-	public final static String DEPARTMENT_NAME_EN = "Department_name_en"
-	public final static String DEPARTMENT_NAME_FR = "Department_name_fr"
+	public final static String DEPARTMENT_NAME_EN = "Department name_en"
+	public final static String DEPARTMENT_NAME_FR = "Department name_fr"
 	
 	public final static String ROOM = "Room"
 	
@@ -84,10 +84,12 @@ class ImportExportConstant {
 	//Importing/exporting Spare part
 	public final static String SPARE_PART_TYPE = "Type"
 	public final static String SPARE_PART_MANUFACTURE_DATE = "Manufacture date"
-	public final static String SPARE_PART_PURCHASE_COST = "Cost"
+	public final static String SPARE_PART_PURCHASE_COST = "Purchase cost"
 	public final static String SPARE_PART_PURCHASE_COST_CURRENCY = "Currency"
 	public final static String SPARE_PART_PURCHASED_BY = "Purchaser"
-	public final static String SPARE_PART_QUANTITY = "Quantity"
+	public final static String SPARE_PART_RECEIVED_QUANTITY = "Quantity received"
+	public final static String SPARE_PART_ORDERED_QUANTITY = "Quantity ordered"
+	public final static String SPARE_PART_INSTOCK_QUANTITY = "Quantity in stock"
 	
 	//Importing/exporting spare part types
 	public final static String SPARE_PART_TYPE_CODE = "spare part type code"
@@ -95,11 +97,4 @@ class ImportExportConstant {
 	public final static String SPARE_PART_TYPE_NAME_FR = "spare part type name_fr"
 	public final static String SPARE_PART_TYPE_DESCRIPTION_EN = "spare part type description_en"
 	public final static String SPARE_PART_TYPE_DESCRIPTION_FR = "spare part type description_fr"
-
-	//Hmis equipment type export
-	public final static String HMIS_EQUIPMENT_TYPE_NAME_EN = "hmis equipment type name_en"
-	public final static String HMIS_EQUIPMENT_TYPE_NAME_FR = "hmis equipment type name_fr"
-	public final static String HMIS_EQUIPMENT_TYPE_CODE = "hmis equipment type code"
-	public final static String HMIS_EQUIPMENT_TYPE_GENERATED_DATE = "hmis equipment type generated date"
-	public final static String NUMBER_OF_OPERATIONAL_EQUIPMENT = "number of operational equipment"
 }

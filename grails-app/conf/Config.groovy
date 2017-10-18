@@ -48,6 +48,12 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
 
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
+//grails.resources.adhoc.includes = ['/images/**', '/css/**', '/js/**', '/plugins/**']
+grails.resources.adhoc.includes = ['/images/**', '/css/**', '/js/**', '/plugins/**']
+
+// uri-to-url resolution cache timeout in milliseconds
+// 0 == caching disabled , -1 == no timeout
+grails.resources.uriToUrlCacheTimeout = 30000
 
 
 // The default codec used to encode data with ${}
@@ -58,6 +64,7 @@ grails.converters.encoding = "UTF-8"
 grails.views.gsp.sitemesh.preprocess = true
 // scaffolding templates configuration
 grails.scaffolding.templates.domainSuffix = 'Instance'
+//grails.resources.debug=true
 
 // Set to false to use the new Grails 1.2 JSONBuilder in the render method
 grails.json.legacy.builder = false

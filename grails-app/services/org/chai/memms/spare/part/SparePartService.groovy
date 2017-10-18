@@ -289,7 +289,8 @@ class SparePartService {
 
 		def dataLocations = []
 		
-		if(!user.userType.equals(UserType.ADMIN) && !user.userType.equals(UserType.TECHNICIANMMC) && !user.userType.equals(UserType.SYSTEM) && !user.userType.equals(UserType.TECHNICIANDH)){
+		//if(!user.userType.equals(UserType.ADMIN) && !user.userType.equals(UserType.TECHNICIANMMC) && !user.userType.equals(UserType.SYSTEM) && !user.userType.equals(UserType.TECHNICIANDH)){
+		if(!user.userType.equals(UserType.ADMIN) && !user.userType.equals(UserType.TECHNICIANMMC) && !user.userType.equals(UserType.SYSTEM)){
 			dataLocations = []
 			if(user.location instanceof Location)
 				dataLocations.addAll(user.location.collectDataLocations(null))
@@ -351,7 +352,7 @@ class SparePartService {
 	}
 	public File exporter(def location,List<SparePart> spareParts){
 		if (log.isDebugEnabled()) log.debug("sparePartService.exporter, location code: "+location.code + ", ImportExportConstant: "+ImportExportConstant.CSV_FILE_EXTENSION)
-		File csvFile = File.createTempFile(location.code+"_export",ImportExportConstant.CSV_FILE_EXTENSION);
+		File csvFile = File.createTempFile(location.code+"_"+location.getNames(new Locale("en")).replaceAll(" ", "_")+"_spare_part_export",ImportExportConstant.CSV_FILE_EXTENSION);
 		FileWriter csvFileWriter = new FileWriter(csvFile);
 		ICsvListWriter writer = new CsvListWriter(csvFileWriter, CsvPreference.EXCEL_PREFERENCE);
 		this.writeFile(writer,spareParts);
@@ -379,9 +380,11 @@ class SparePartService {
 					sparePart.supplier?.code?:"",
 					sparePart.supplier?.contact?.contactName?:"",
 					sparePart.purchaseDate?:"",
-					sparePart.purchaseCost?:"n/a",
-					sparePart.currency?:"n/a",
-					sparePart.receivedQuantity?:""
+					sparePart.orderedQuantity?:"",
+					sparePart.receivedQuantity?:"",
+					sparePart.inStockQuantity?:"",
+					sparePart.purchaseCost?:"",
+					sparePart.currency?:"",
 				]
 				writer.write(line)
 			}
@@ -411,9 +414,11 @@ class SparePartService {
 		headers.add(ImportExportConstant.SUPPLIER_CODE)
 		headers.add(ImportExportConstant.SUPPLIER_CONTACT_NAME)
 		headers.add(ImportExportConstant.SUPPLIER_DATE)
+		headers.add(ImportExportConstant.SPARE_PART_ORDERED_QUANTITY)
+		headers.add(ImportExportConstant.SPARE_PART_RECEIVED_QUANTITY)
+		headers.add(ImportExportConstant.SPARE_PART_INSTOCK_QUANTITY)
 		headers.add(ImportExportConstant.SPARE_PART_PURCHASE_COST)
 		headers.add(ImportExportConstant.SPARE_PART_PURCHASE_COST_CURRENCY)
-		headers.add(ImportExportConstant.SPARE_PART_QUANTITY)
 
 		return headers;
 	}

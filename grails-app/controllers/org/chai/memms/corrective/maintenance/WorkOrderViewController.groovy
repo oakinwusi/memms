@@ -185,6 +185,7 @@ class WorkOrderViewController extends AbstractController{
 				template:"workOrder/workOrderList",
 				filterTemplate:"workOrder/workOrderFilter",
 				listTop:"workOrder/listTop",
+				code: getLabel()
 			])
 		}
 	}

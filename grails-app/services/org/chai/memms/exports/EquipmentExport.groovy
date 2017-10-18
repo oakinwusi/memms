@@ -87,11 +87,11 @@ class EquipmentExport implements Exporter{
 			for(Equipment equipment: equipments){
 				if (log.isDebugEnabled()) log.debug("exporting equipment=" + equipment)
 				List<String> line = [
-					equipment.id,equipment.serialNumber?:"n/a",equipment.type.code,equipment.type?.getNames(new Locale("en")),equipment.type?.getNames(new Locale("fr")),equipment.model?:"n/a",
-					equipment.currentStatus,equipment.dataLocation?.code,equipment.dataLocation?.getNames(new Locale("en")),equipment.dataLocation?.getNames(new Locale("fr"))?:"n/a",
-					equipment.department?.code,equipment.department?.getNames(new Locale("en")),equipment.department?.getNames(new Locale("fr"))?:"n/a",equipment.room?:"n/a",equipment.manufacturer?.code?:"n/a",
+					equipment.id,equipment.serialNumber?:"n/a",equipment.type?.code?:"",equipment.type?.getNames(new Locale("en"))?:"",equipment.type?.getNames(new Locale("fr"))?:"",equipment.model?:"n/a",
+					equipment.currentStatus?:"",equipment.dataLocation?.code?:"",equipment.dataLocation?.getNames(new Locale("en"))?:"",equipment.dataLocation?.getNames(new Locale("fr"))?:"n/a",
+					equipment.department?.code?:"",equipment.department?.getNames(new Locale("en"))?:"",equipment.department?.getNames(new Locale("fr"))?:"n/a",equipment.room?:"n/a",equipment.manufacturer?.code?:"n/a",
 					equipment.manufacturer?.contact?.contactName?:"n/a",equipment.manufactureDate?:"n/a",equipment.supplier?.code?:"n/a",equipment.supplier?.contact?.contactName?:"n/a",
-					equipment.purchaseDate?:"n/a",equipment.purchaseCost?:"n/a",equipment.currency?:"n/a",equipment.donorName?:"n/a",equipment.obsolete,equipment.warranty?.startDate?:"n/a",
+					equipment.purchaseDate?:"n/a",equipment.purchaseCost?:"n/a",equipment.currency?:"n/a",equipment.donorName?:"n/a",equipment.obsolete?:"",equipment.warranty?.startDate?:"n/a",
 					equipment.warrantyPeriod?.numberOfMonths?:"n/a"
 					]
 				log.debug("exporting line=" + line)

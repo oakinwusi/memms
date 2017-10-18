@@ -201,7 +201,8 @@ class EquipmentViewController extends AbstractController {
 					currentLocationTypes: dataLocationTypesFilter,
 					template: "/inventorySummaryPage/sectionTable",
 					entityCount: inventories?.totalCount,
-					locationSkipLevels: locationSkipLevels
+					locationSkipLevels: locationSkipLevels,
+					code:getLabel()
 				])
 	}
 
