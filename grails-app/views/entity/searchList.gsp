@@ -21,6 +21,7 @@
 					<div class="list-template ${(searchCmd)?:'hide-template'}">
 						<g:render template="/entity/${template}" />
 					</div>
+					<g:render template="/templates/pagination" model="[entities:entities, entityCount:entities.totalCount]" />
 				</div>
 			</div>
 		</div>

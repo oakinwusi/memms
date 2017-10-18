@@ -15,6 +15,7 @@
 			</tr>
 		</thead>
 		<tbody>
+		<g:if test="${entities != null && !entities.empty}">
 			<g:each in="${entities}" status="i" var="sparePart">
 				<tr >
 					<td>
@@ -35,6 +36,12 @@
 					<td>${sparePart.inStockQuantity}</td>
 				</tr>
 			</g:each>
+		</g:if>
+		<g:else>
+			<tr>
+				<td><g:message code="entity.list.empty.label" args="[message(code:'spare.part.label')]"/></td>
+			</tr>
+		</g:else>
 		</tbody>	
 	</table>
 	<g:render template="/templates/pagination" model="[entities:entities, entityCount:entities.totalCount]" />

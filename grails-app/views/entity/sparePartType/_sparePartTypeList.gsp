@@ -14,6 +14,7 @@
        </tr>
 	</thead>
 	<tbody>
+	<g:if test="${entities != null && !entities.empty}">
 		<g:each in="${entities}" status="i" var="type">
 			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 				<td>
@@ -85,6 +86,11 @@
 				</tr>
 			</g:if >
 		</g:each>
+	<g:else>
+		<tr>
+			<td colspan=5><g:message code="entity.list.empty.label" args="[message(code:'spare.part.type.label')]"/></td>
+		</tr>
+	</g:else>
 	</tbody>
 </table>
 <g:render template="/templates/pagination" model="[entities:entities, entityCount:entities.totalCount]" />

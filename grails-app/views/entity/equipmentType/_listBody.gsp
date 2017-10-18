@@ -1,5 +1,6 @@
 <%@ page import="org.chai.memms.util.Utils" %>
 <tbody>
+	<g:if test="${entities != null && !entities.empty}">
 	<g:each in="${entities}" status="i" var="type">
 		<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 			<td>
@@ -45,4 +46,10 @@
 			</td>
 		</tr>
 	</g:each>
+	</g:if>
+	<g:else>
+		<tr>
+			<td colspan=7><g:message code="entity.list.empty.label" args="[message(code:'equipment.type.label')]"/></td>
+		</tr>
+	</g:else>
 </tbody>
